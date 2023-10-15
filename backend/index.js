@@ -23,7 +23,7 @@ mongoose
     .connect('mongodb+srv://sandeepvemula408:sandeep408@sandeepcluster.d8bxcde.mongodb.net/books-collection?retryWrites=true&w=majority')
     .then(() => {
         console.log("database is connected")
-        app.listen(PORT, () => {
+        app.listen(3000, () => {
             console.log("server is running on port;", PORT)
         });
 
