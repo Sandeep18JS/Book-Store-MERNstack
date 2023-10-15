@@ -21,7 +21,7 @@ app.use('/books', booksRoute)
 
 
 mongoose
-    .connect(mongoDBURL)
+    .connect('mongodb+srv://sandeepvemula408:sandeep408@sandeepcluster.d8bxcde.mongodb.net/books-collection?retryWrites=true&w=majority')
     .then(() => {
         console.log("database is connected")
         app.listen(PORT, () => {
