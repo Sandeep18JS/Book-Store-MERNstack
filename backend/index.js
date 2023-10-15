@@ -13,7 +13,7 @@ app.use(cors());
 
 
 app.get('/', (req, res) => {
-    console.log(req);
+res.json("Hello");
     return res.status(234).send("MERN is running")
 })
 
