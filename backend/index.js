@@ -1,4 +1,5 @@
 import express from 'express'
+import { PORT, mongoDBURL } from './config.js'
 import mongoose, { connect } from 'mongoose';
 import booksRoute from './routes/booksRoutes.js'
 import cors from 'cors';
@@ -12,7 +13,7 @@ app.use(cors());
 
 
 app.get('/', (req, res) => {
-res.json("Hello");
+    console.log(req);
     return res.status(234).send("MERN is running")
 })
 
@@ -20,10 +21,10 @@ app.use('/books', booksRoute)
 
 
 mongoose
-    .connect('mongodb+srv://sandeepvemula408:sandeep408@sandeepcluster.d8bxcde.mongodb.net/books-collection?retryWrites=true&w=majority')
+    .connect(mongoDBURL)
     .then(() => {
         console.log("database is connected")
-        app.listen(3000, () => {
+        app.listen(PORT, () => {
             console.log("server is running on port")
         });
 
